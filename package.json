@@ -1,0 +1,12 @@
+{
+  "name": "pomodoro-ts",
+  "version": "1.0.0",
+  "description": "typescript verion of a pomodoro web app",
+  "scripts": {
+  },
+  "author": "romorin",
+  "license": "MIT",
+  "devDependencies": {
+    "inversify": "^2.0.1"
+  }
+}

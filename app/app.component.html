@@ -1,0 +1,27 @@
+<div class="app-component">
+<div class="timer">
+	<input *ngIf="pomodoro.editing" type="text" class="form-control title" id="titleLabel"
+  		required [(ngModel)]="pomodoro.titleLabel" name="titleLabel">
+	<h1 *ngIf="! pomodoro.editing" class="title">{{pomodoro.titleLabel}}</h1>
+	<div class="counter">
+		<div *ngIf="pomodoro.editing">
+			<button class="timer-button" (click)="incrementMin()">&and;</button>
+			<button class="timer-button" (click)="decrementMin()">&or;</button>
+		</div>
+		<div *ngIf="! pomodoro.editing">{{pomodoro.leftDecoration}}</div>
+		<div>{{pomodoro.countdown | minutes}}</div>
+		:
+		<div>{{pomodoro.countdown | seconds}}</div>
+		<div *ngIf="pomodoro.editing">
+			<button class="timer-button" (click)="incrementSec()">&and;</button>
+			<button class="timer-button" (click)="decrementSec()">&or;</button>
+		</div>
+		<div *ngIf="! pomodoro.editing">{{pomodoro.rightDecoration}}</div>
+	</div>
+	<div class="action-buttons">
+		<button class="timer-button" (click)="onToggle()">[{{pomodoro.toggleLabel}}]</button>
+		<button class="timer-button" (click)="onReset()">[{{pomodoro.resetLabel}}]</button>
+		<button class="timer-button" (click)="onEdit()">[{{pomodoro.editLabel}}]</button>
+	</div>
+</div>
+</div>
