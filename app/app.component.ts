@@ -1,33 +1,41 @@
-import { Component, OnInit } from '@angular/core';
 import { Pomodoro } from './pomodoro/pomodoro';
 import { PomodoroDisplay } from './pomodoro/pomodoro-display';
-import { PomodoroService } from './pomodoro/pomodoro.service';
 
-import { MODULE_POMODORO } from './pomodoro/pomodoro.module';
+export class AppComponent {
+	constructor(private display: PomodoroDisplay, private pomodoro: Pomodoro) {}
 
-@Component({
-		selector: 'app-root',
-		templateUrl: 'app.component.html',
-		styleUrls:  ['app.component.css'],
-		providers: [ PomodoroService, MODULE_POMODORO ]
-})
-export class AppComponent implements OnInit  {
-	public pomodoro: PomodoroDisplay;
-	private controller: Pomodoro;
+	public onInit(): void { this.attachView(); }
 
-	constructor(private pomodoroService: PomodoroService) {}
+	public onEdit() { this.pomodoro.onEdit(); }
+	public onToggle() { this.pomodoro.onToggle(); }
+	public onReset() { this.pomodoro.onReset(); }
 
-	ngOnInit(): void {
-		this.pomodoro = this.pomodoroService.display;
-		this.controller = this.pomodoroService.pomodoro;
+	public incrementMin() { this.pomodoro.incrementMin(); }
+	public decrementMin() { this.pomodoro.decrementMin(); }
+	public incrementSec() { this.pomodoro.incrementSec(); }
+	public decrementSec() { this.pomodoro.decrementSec(); }
+
+	private attachView() {
+		Array.from(document.getElementsByClassName('increment-min')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.incrementMin(); })
+		});
+		Array.from(document.getElementsByClassName('decrement-min')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.decrementMin(); })
+		});
+		Array.from(document.getElementsByClassName('increment-sec')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.incrementSec(); })
+		});
+		Array.from(document.getElementsByClassName('decrement-sec')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.decrementSec(); })
+		});
+		Array.from(document.getElementsByClassName('on-toggle')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.onToggle(); })
+		});
+		Array.from(document.getElementsByClassName('on-edit')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.onEdit(); })
+		});
+		Array.from(document.getElementsByClassName('on-reset')).forEach((element) => {
+			element.addEventListener("click", (event) => { this.onReset(); })
+		});
 	}
-
-	public onEdit() { this.controller.onEdit(); }
-	public onToggle() { this.controller.onToggle(); }
-	public onReset() { this.controller.onReset(); }
-
-	public incrementMin() { this.controller.incrementMin(); }
-	public decrementMin() { this.controller.decrementMin(); }
-	public incrementSec() { this.controller.incrementSec(); }
-	public decrementSec() { this.controller.decrementSec(); }
 }

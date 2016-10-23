@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "typescript verion of a pomodoro web app",
   "scripts": {
+    "build": "tsc"
   },
   "author": "romorin",
   "license": "MIT",
   "devDependencies": {
     "inversify": "^2.0.1"
+  },
+  "dependencies": {
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0",
+    "webpack": "^1.13.2"
   }
 }

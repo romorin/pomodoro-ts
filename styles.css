@@ -75,4 +75,9 @@ body {
 	position:relative;
 	top:1px;
 }
+
 /* This button was generated using CSSButtonGenerator.com then edited */
+
+.hidden {
+	display: none;
+}

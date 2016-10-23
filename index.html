@@ -1,25 +1,24 @@
 <!doctype html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Pomodoro</title>
-	<base href="/">
 	<link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<script ype="text/javascript" src="index.js"></script>
+	<script ype="text/javascript" src="dist/bundle.js"></script>
 	<div class="app-root">
 		<div class="app-component">
 			<div class="timer">
-				<div class="editing">
-					<input type="text" class="form-control title" required name="titleLabel">
+				<div class="hidden editing">
+					<input type="text" class="form-control title" required name="titleLabel" value="test">
 				</div>
 				<div class="non-editing">
 					<h1 class="title">...</h1>
 				</div>
 				<div class="counter">
-					<div class="editing">
+					<div class="hidden editing">
 						<button class="timer-button increment-min">&and;</button>
 						<button class="timer-button decrement-min">&or;</button>
 					</div>
@@ -27,11 +26,11 @@
 
 					<div class="minutes">...</div>:<div class="seconds">...</div>
 
-					<div class="editing">
+					<div class="hidden editing">
 						<button class="timer-button increment-sec">&and;</button>
 						<button class="timer-button decrement-sec">&or;</button>
 					</div>
-					<div class="editing right-decoration">...</div>
+					<div class="non-editing right-decoration">...</div>
 				</div>
 				<div class="action-buttons">
 					<button class="timer-button on-toggle">...</button>
