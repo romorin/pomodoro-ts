@@ -1,0 +1,3 @@
+[submodule "app/pomodoro"]
+	path = app/pomodoro
+	url = https://github.com/romorin/pomodoro-ts-core.git
