@@ -109,7 +109,7 @@ export class ManualPomodoroDisplay {
 		this._toggleLabel = newVal;
 
 		Array.from(this._toggleLabelElems).forEach((element) => {
-			element.innerHTML = this._toggleLabel;
+			element.innerHTML = '[' + this._toggleLabel + ']';
 		});
 	}
 
@@ -120,7 +120,7 @@ export class ManualPomodoroDisplay {
 		this._editLabel = newVal;
 
 		Array.from(this._editLabelElems).forEach((element) => {
-			element.innerHTML = this._editLabel;
+			element.innerHTML = '[' + this._editLabel + ']';
 		});
 	}
 
@@ -131,7 +131,7 @@ export class ManualPomodoroDisplay {
 		this._resetLabel = newVal;
 
 		Array.from(this._resetLabelElems).forEach((element) => {
-			element.innerHTML = this._resetLabel;
+			element.innerHTML = '[' + this._resetLabel + ']';
 		});
 	}
 
